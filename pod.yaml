@@ -3,14 +3,12 @@ kind: Service
 metadata:
  name: helloworld-service
 spec:
- type: NodePort
+ type: ClusterIP
  selector:
    app: helloworld
    env: prod
  ports:
- - nodePort: 32410
-   protocol: TCP
-   port: 8080
+ - port: 8080
    targetPort: 8080
 ---
 apiVersion: apps/v1 
