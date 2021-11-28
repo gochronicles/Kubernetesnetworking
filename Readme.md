@@ -6,23 +6,23 @@ To run this project :
 
 This branch talks about usign Nodeport to communicate via services to the underlying pod. make load and make start have the following commands :
 
-# Start minikube
+### Start minikube
 minikube start
 
-# Set docker env
+### Set docker env
 eval $(minikube docker-env)             # To point your shell to minikube's docker-daemon
 
-# Build image
+### Build image
 docker build -t hello-world .
 
-#Load image into Minikube
+### Load image into Minikube
 minikube image load hello-world
 
-# Apply  pod.yaml to create a deployment and a service 
+### Apply  pod.yaml to create a deployment and a service 
 kubectl create -f pod.yaml
 
-# Get all the services
+### Get all the services
 kubectl get svc
 
-# Start the service
+### Start the service
 minikube service helloworld-service
